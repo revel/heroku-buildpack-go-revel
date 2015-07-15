@@ -99,10 +99,15 @@ fi
 mkdir -p $build/bin
 cp -R $cache/$ver/go $build/.goroot
 
+echo -n "\$build = $build"
 GOBIN=$build/bin export GOBIN
+echo -n "GOBIN = $GOBIN"
 GOROOT=$build/.goroot export GOROOT
+echo -n "GOROOT = $GOROOT"
 GOPATH=$build/.go export GOPATH
+echo -n "GOPATH = $GOPATH"
 PATH=$GOROOT/bin:$PATH
+echo -n "PATH = $PATH"
 
 
 if ! (which hg >/dev/null && which bzr >/dev/null)
