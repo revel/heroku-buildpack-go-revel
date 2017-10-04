@@ -165,3 +165,18 @@ mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
 
 go get github.com/revel/cmd/revel
+
+# we need revel in a specific version for produce-api
+cd $GOPATH/src/github.com/revel/revel
+git checkout v0.13.1
+
+cd $GOPATH/src/github.com/revel/config
+git checkout v0.13.0
+
+cd $GOPATH/src/github.com/revel/modules
+git checkout v0.12.0
+
+cd $GOPATH/src/github.com/revel/cmd
+git checkout v0.13.1
+
+go install
