@@ -143,6 +143,7 @@ fi
 if [ -f "$env_dir/REVEL_MODE" ]
 then
     export REVEL_MODE=$(cat "$env_dir/REVEL_MODE")
+    echo "-----> Runing Revel in $REVEL_MODE"
 fi
 
 FLAGS=(-tags heroku)
