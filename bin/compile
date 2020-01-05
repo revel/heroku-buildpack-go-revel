@@ -139,13 +139,6 @@ then
     done
 fi
 
-# export REVEL_MODE if present
-if [ -f "$env_dir/REVEL_MODE" ]
-then
-    export REVEL_MODE=$(cat "$env_dir/REVEL_MODE")
-    echo "-----> Running Revel in $REVEL_MODE mode"
-fi
-
 FLAGS=(-tags heroku)
 if test -f "$env_dir/GO_GIT_DESCRIBE_SYMBOL"
 then
