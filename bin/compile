@@ -137,11 +137,12 @@ then
             export "$cgo_opt=$(cat "$env_dir/$cgo_opt")"
         fi
     done
-    # export REVEL_MODE if present
-    if [ -f "$env_dir/REVEL_MODE" ]
-    then
-        export REVEL_MODE=$(cat "$env_dir/REVEL_MODE")
-    fi
+fi
+
+# export REVEL_MODE if present
+if [ -f "$env_dir/REVEL_MODE" ]
+then
+    export REVEL_MODE=$(cat "$env_dir/REVEL_MODE")
 fi
 
 FLAGS=(-tags heroku)
