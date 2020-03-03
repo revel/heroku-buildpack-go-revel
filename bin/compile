@@ -147,6 +147,10 @@ then
     FLAGS=(${FLAGS[@]} -ldflags "-X $git_describe_symbol $git_describe")
 fi
 
+#update godep
+echo "-----> updating/installing godep"
+go get -u github.com/golang/dep/cmd/dep
+
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
 if test -e $build/Godeps
